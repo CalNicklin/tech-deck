@@ -2,7 +2,7 @@
 
 import { Canvas } from "@react-three/fiber";
 import TechDeck from "./tech-deck";
-import { OrbitControls } from "@react-three/drei";
+import { ContactShadows, OrbitControls } from "@react-three/drei";
 
 interface SceneProps {
   isAnimating: boolean;
@@ -17,10 +17,10 @@ export default function Scene({ isAnimating, animations }: SceneProps) {
         <ambientLight intensity={0.5} />
         <directionalLight intensity={7} position={[1, 2, 3]} />
         <TechDeck isAnimating={isAnimating} animations={animations} />
+        <ContactShadows opacity={0.5} position={[0, -0.1, 0]} />
         <axesHelper scale={2} />
         <OrbitControls />
       </Canvas>
     </div>
   );
 }
-
