@@ -34,7 +34,37 @@ export default function TechDeck({ isAnimating, animations }: TechDeckProps) {
         });
       },
 
-      shuvit: () => {
+      bsShuvit: () => {
+        if (!skateboardRef.current) return;
+        gsap.set(skateboardRef.current.rotation, { y: 0 });
+        return gsap.to(skateboardRef.current.rotation, {
+          y: -Math.PI,
+          duration: 1,
+          ease: "power2.out",
+        });
+      },
+
+      fsShuvit: () => {
+        if (!skateboardRef.current) return;
+        gsap.set(skateboardRef.current.rotation, { y: 0 });
+        return gsap.to(skateboardRef.current.rotation, {
+          y: Math.PI,
+          duration: 1,
+          ease: "power2.out",
+        });
+      },
+
+      bsFullShuvit: () => {
+        if (!skateboardRef.current) return;
+        gsap.set(skateboardRef.current.rotation, { y: 0 });
+        return gsap.to(skateboardRef.current.rotation, {
+          y: Math.PI * -2,
+          duration: 1,
+          ease: "power2.out",
+        });
+      },
+
+      fsFullShuvit: () => {
         if (!skateboardRef.current) return;
         gsap.set(skateboardRef.current.rotation, { y: 0 });
         return gsap.to(skateboardRef.current.rotation, {
@@ -110,4 +140,3 @@ export default function TechDeck({ isAnimating, animations }: TechDeckProps) {
 }
 
 useGLTF.preload("/assets/skateboard.gltf");
-
