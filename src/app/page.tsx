@@ -71,7 +71,7 @@ export default function Home() {
       {/* Main content */}
       <div className="flex flex-col flex-grow p-4">
         <h1 className="text-3xl font-bold mb-4">
-          You can't beat this H.O.R.S.E.
+          You cant beat this S.K.A.T.E.
         </h1>
 
         {/* Scene */}
@@ -83,7 +83,10 @@ export default function Home() {
         <Card className="mt-4">
           <CardHeader className="flex flex-row items-center justify-between">
             <CardTitle>Last Run Animation</CardTitle>
-            <Button onClick={replayLastTrick} disabled={lastRunAnimations.length === 0}>
+            <Button
+              onClick={replayLastTrick}
+              disabled={lastRunAnimations.length === 0}
+            >
               Replay
             </Button>
           </CardHeader>
@@ -131,4 +134,3 @@ export default function Home() {
     </div>
   );
 }
-
